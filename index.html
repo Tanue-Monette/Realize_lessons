@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>HTML & CSS Learning Hub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#web-fundamentals" class="nav-link">Web Basics</a></li>
+                <li><a href="#html-basics" class="nav-link">HTML</a></li>
+                <li><a href="#forms-inputs" class="nav-link">Forms</a></li>
+                <li><a href="#css-basics" class="nav-link">CSS</a></li>
+                <li><a href="#layout" class="nav-link">Layout</a></li>
+                <li><a href="#responsive" class="nav-link">Responsive</a></li>
+                <li><a href="#animations" class="nav-link">Animations</a></li>
+                <li><a href="#accessibility" class="nav-link">Accessibility</a></li>
+                <li><a href="#practice" class="nav-link">Practice</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Learn HTML & CSS</h1>
+                <p>Master the fundamentals of web development with interactive examples and hands-on practice</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('html-basics')">Start with HTML</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('css-basics')">Learn CSS</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                    </div>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- How the Web Works Section -->
+        <section id="web-fundamentals" class="section">
+            <div class="container">
+                <h2><i class="fas fa-globe"></i> How the Web Works</h2>
+                <p class="section-intro">Before diving into HTML and CSS, let's understand the fundamental concepts of
+                    how the internet and web work.</p>
+
+                <div class="learning-modules">
+                    <!-- Introduction -->
+                    <div class="module">
+                        <h3><i class="fas fa-info-circle"></i> 1. Introduction</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Internet vs Web - What's the Difference?</h4>
+                                <div class="comparison-box">
+                                    <div class="comparison-item">
+                                        <h5><i class="fas fa-network-wired"></i> The Internet</h5>
+                                        <p><strong>Think of it as the infrastructure:</strong> A massive network of
+                                            connected computers, cables, and servers that spans the globe. It's like the
+                                            road system that connects cities.</p>
+                                        <ul>
+                                            <li>Physical network of computers</li>
+                                            <li>Enables data transfer between devices</li>
+                                            <li>Includes email, file sharing, video calls</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <h5><i class="fas fa-globe"></i> The Web</h5>
+                                        <p><strong>Think of it as the content:</strong> A collection of websites and web
+                                            pages that you access through your browser. It's like the cars and trucks
+                                            that use the roads.</p>
+                                        <ul>
+                                            <li>Collection of websites and web pages</li>
+                                            <li>Accessed through web browsers</li>
+                                            <li>Uses HTTP/HTTPS protocols</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What Happens When You Type a URL -->
+                    <div class="module">
+                        <h3><i class="fas fa-search"></i> 2. What Happens When You Type a URL?</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>The Journey of a Web Request</h4>
+                                <p>When you type <code>www.google.com</code> and press Enter, here's what happens behind
+                                    the scenes:</p>
+
+                                <div class="process-flow">
+                                    <div class="process-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5><i class="fas fa-address-book"></i> DNS Lookup</h5>
+                                            <p><strong>What happens:</strong> Your browser asks "What's the address for
+                                                google.com?"</p>
+                                            <p><strong>Analogy:</strong> Like looking up a phone number in a phonebook
+                                            </p>
+                                            <p><strong>Result:</strong> DNS returns the IP address (e.g.,
+                                                142.250.190.78)</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="process-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5><i class="fas fa-paper-plane"></i> HTTP Request</h5>
+                                            <p><strong>What happens:</strong> Your browser sends a request to Google's
+                                                server</p>
+                                            <p><strong>Analogy:</strong> Like sending a letter asking for a specific
+                                                document</p>
+                                            <p><strong>Request:</strong> "Please send me the Google homepage"</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="process-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5><i class="fas fa-server"></i> Server Response</h5>
+                                            <p><strong>What happens:</strong> Google's server processes your request and
+                                                sends back files</p>
+                                            <p><strong>Analogy:</strong> Like receiving a package with all the pieces
+                                                you need</p>
+                                            <p><strong>Response:</strong> HTML, CSS, JavaScript, images, etc.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="process-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <h5><i class="fas fa-paint-brush"></i> Browser Rendering</h5>
+                                            <p><strong>What happens:</strong> Your browser builds the webpage from the
+                                                received files</p>
+                                            <p><strong>Analogy:</strong> Like assembling a puzzle with all the pieces
+                                            </p>
+                                            <p><strong>Result:</strong> You see the complete Google homepage</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Components -->
+                    <div class="module">
+                        <h3><i class="fas fa-cogs"></i> 3. Key Components of the Web</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Essential Web Technologies</h4>
+                                <div class="components-grid">
+                                    <div class="component-card">
+                                        <h5><i class="fas fa-desktop"></i> Client (Browser)</h5>
+                                        <p><strong>Definition:</strong> Your web browser (Chrome, Firefox, Safari)</p>
+                                        <p><strong>Role:</strong> Requests and displays web pages</p>
+                                        <p><strong>Examples:</strong> Chrome, Firefox, Safari, Edge</p>
+                                    </div>
+
+                                    <div class="component-card">
+                                        <h5><i class="fas fa-server"></i> Server</h5>
+                                        <p><strong>Definition:</strong> A powerful computer that stores and serves
+                                            website files</p>
+                                        <p><strong>Role:</strong> Responds to requests and sends back web pages</p>
+                                        <p><strong>Examples:</strong> Apache, Nginx, cloud servers</p>
+                                    </div>
+
+                                    <div class="component-card">
+                                        <h5><i class="fas fa-address-book"></i> DNS (Domain Name System)</h5>
+                                        <p><strong>Definition:</strong> The internet's phonebook that converts domain
+                                            names to IP addresses</p>
+                                        <p><strong>Role:</strong> Translates human-readable URLs to computer addresses
+                                        </p>
+                                        <p><strong>Example:</strong> google.com → 142.250.190.78</p>
+                                    </div>
+
+                                    <div class="component-card">
+                                        <h5><i class="fas fa-map-marker-alt"></i> IP Address</h5>
+                                        <p><strong>Definition:</strong> Unique numerical address for each device on the
+                                            internet</p>
+                                        <p><strong>Role:</strong> Identifies specific computers and servers</p>
+                                        <p><strong>Example:</strong> 192.168.1.1 (local) or 142.250.190.78 (Google)</p>
+                                    </div>
+
+                                    <div class="component-card">
+                                        <h5><i class="fas fa-shield-alt"></i> HTTP/HTTPS</h5>
+                                        <p><strong>Definition:</strong> Protocols that define how data is transferred
+                                            between client and server</p>
+                                        <p><strong>Role:</strong> HTTP (unsecured) vs HTTPS (secured with encryption)
+                                        </p>
+                                        <p><strong>Security:</strong> HTTPS encrypts data for privacy and security</p>
+                                    </div>
+
+                                    <div class="component-card">
+                                        <h5><i class="fas fa-home"></i> Hosting & Domain</h5>
+                                        <p><strong>Hosting:</strong> Service that stores your website files on servers
+                                        </p>
+                                        <p><strong>Domain:</strong> Human-readable address for your website</p>
+                                        <p><strong>Examples:</strong> Hosting: Netlify, Vercel, AWS. Domain: google.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client vs Server -->
+                    <div class="module">
+                        <h3><i class="fas fa-exchange-alt"></i> 4. Client vs Server</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>The Request-Response Cycle</h4>
+                                <p>Web communication follows a simple pattern: your browser (client) asks for something,
+                                    and a server responds.</p>
+
+                                <div class="client-server-diagram">
+                                    <div class="diagram-step">
+                                        <div class="step-icon">
+                                            <i class="fas fa-desktop"></i>
+                                        </div>
+                                        <div class="step-label">Your Browser (Client)</div>
+                                    </div>
+                                    <div class="diagram-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span>Request</span>
+                                    </div>
+                                    <div class="diagram-step">
+                                        <div class="step-icon">
+                                            <i class="fas fa-server"></i>
+                                        </div>
+                                        <div class="step-label">Web Server</div>
+                                    </div>
+                                    <div class="diagram-arrow">
+                                        <i class="fas fa-arrow-left"></i>
+                                        <span>Response</span>
+                                    </div>
+                                    <div class="diagram-step">
+                                        <div class="step-icon">
+                                            <i class="fas fa-desktop"></i>
+                                        </div>
+                                        <div class="step-label">Your Browser (Client)</div>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Real-World Example</h4>
+                                    <div class="example-scenario">
+                                        <div class="scenario-step">
+                                            <h5>1. You Type: google.com</h5>
+                                            <p>Your browser needs to find Google's server</p>
+                                        </div>
+                                        <div class="scenario-step">
+                                            <h5>2. DNS Lookup</h5>
+                                            <p>DNS tells your browser: "Google is at 142.250.190.78"</p>
+                                        </div>
+                                        <div class="scenario-step">
+                                            <h5>3. Browser Request</h5>
+                                            <p>Browser: "Please send me Google's homepage"</p>
+                                        </div>
+                                        <div class="scenario-step">
+                                            <h5>4. Server Response</h5>
+                                            <p>Google's server: "Here are the HTML, CSS, and images"</p>
+                                        </div>
+                                        <div class="scenario-step">
+                                            <h5>5. Page Display</h5>
+                                            <p>Browser builds and shows the Google homepage</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HTML, CSS, JS Roles -->
+                    <div class="module">
+                        <h3><i class="fas fa-code"></i> 5. HTML, CSS, and JavaScript Roles</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>How Web Technologies Work Together</h4>
+                                <p>Think of a website like a house: HTML is the structure, CSS is the design, and
+                                    JavaScript is the functionality.</p>
+
+                                <div class="tech-roles">
+                                    <div class="role-card">
+                                        <div class="role-icon">
+                                            <i class="fas fa-cube"></i>
+                                        </div>
+                                        <h5>HTML - Structure</h5>
+                                        <p><strong>Purpose:</strong> Defines the content and structure of the page</p>
+                                        <p><strong>Analogy:</strong> The foundation, walls, and rooms of a house</p>
+                                        <p><strong>Examples:</strong> Headings, paragraphs, images, links</p>
+                                        <div class="role-example">
+                                            <h6>HTML Example:</h6>
+                                            <pre><code>&lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;img src="photo.jpg"&gt;</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <div class="role-card">
+                                        <div class="role-icon">
+                                            <i class="fas fa-palette"></i>
+                                        </div>
+                                        <h5>CSS - Style</h5>
+                                        <p><strong>Purpose:</strong> Controls the appearance and layout</p>
+                                        <p><strong>Analogy:</strong> The paint, furniture, and decorations</p>
+                                        <p><strong>Examples:</strong> Colors, fonts, spacing, animations</p>
+                                        <div class="role-example">
+                                            <h6>CSS Example:</h6>
+                                            <pre><code>h1 { color: blue; }
+p { font-size: 16px; }
+img { border-radius: 10px; }</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <div class="role-card">
+                                        <div class="role-icon">
+                                            <i class="fas fa-magic"></i>
+                                        </div>
+                                        <h5>JavaScript - Behavior</h5>
+                                        <p><strong>Purpose:</strong> Adds interactivity and dynamic functionality</p>
+                                        <p><strong>Analogy:</strong> The electrical system, appliances, and smart
+                                            features</p>
+                                        <p><strong>Examples:</strong> Forms, animations, data processing</p>
+                                        <div class="role-example">
+                                            <h6>JavaScript Example:</h6>
+                                            <pre><code>button.addEventListener('click', function() {
+    alert('Hello!');
+});</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Hosting -->
+                    <div class="module">
+                        <h3><i class="fas fa-cloud"></i> 6. Web Hosting & Deployment</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Where Websites Live</h4>
+                                <p>After creating your website, you need to put it somewhere so others can access it
+                                    online.</p>
+
+                                <div class="hosting-options">
+                                    <div class="hosting-card">
+                                        <h5><i class="fas fa-github"></i> Free Hosting Options</h5>
+                                        <ul>
+                                            <li><strong>GitHub Pages:</strong> Host static websites for free</li>
+                                            <li><strong>Netlify:</strong> Deploy from Git with custom domains</li>
+                                            <li><strong>Vercel:</strong> Great for React and Next.js projects</li>
+                                            <li><strong>Firebase Hosting:</strong> Google's hosting solution</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="hosting-card">
+                                        <h5><i class="fas fa-server"></i> Paid Hosting Options</h5>
+                                        <ul>
+                                            <li><strong>Shared Hosting:</strong> Affordable for small websites</li>
+                                            <li><strong>VPS:</strong> More control and resources</li>
+                                            <li><strong>Cloud Hosting:</strong> Scalable solutions (AWS, Google Cloud)
+                                            </li>
+                                            <li><strong>WordPress Hosting:</strong> Optimized for WordPress sites</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Getting Started Tip:</h5>
+                                    <p>For beginners, start with free options like GitHub Pages or Netlify. They're
+                                        perfect for learning and showcasing your projects!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recap Quiz -->
+                    <div class="module">
+                        <h3><i class="fas fa-question-circle"></i> 7. Knowledge Check</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Test Your Understanding</h4>
+                                <p>Answer these questions to make sure you understand the basics:</p>
+
+                                <div class="quiz-section">
+                                    <div class="quiz-question">
+                                        <h5>Question 1:</h5>
+                                        <p>What's the difference between the internet and the web?</p>
+                                        <div class="quiz-answer" onclick="toggleAnswer(this)">
+                                            <span class="answer-toggle">Click to reveal answer</span>
+                                            <div class="answer-content">
+                                                <p><strong>Internet:</strong> The physical network infrastructure that
+                                                    connects computers globally.</p>
+                                                <p><strong>Web:</strong> The collection of websites and web pages
+                                                    accessed through browsers using HTTP/HTTPS protocols.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="quiz-question">
+                                        <h5>Question 2:</h5>
+                                        <p>What is DNS and why is it important?</p>
+                                        <div class="quiz-answer" onclick="toggleAnswer(this)">
+                                            <span class="answer-toggle">Click to reveal answer</span>
+                                            <div class="answer-content">
+                                                <p><strong>DNS (Domain Name System)</strong> is like a phonebook for the
+                                                    internet. It converts human-readable domain names (like google.com)
+                                                    into IP addresses (like 142.250.190.78) that computers can
+                                                    understand.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="quiz-question">
+                                        <h5>Question 3:</h5>
+                                        <p>What are the three main technologies that make up a website?</p>
+                                        <div class="quiz-answer" onclick="toggleAnswer(this)">
+                                            <span class="answer-toggle">Click to reveal answer</span>
+                                            <div class="answer-content">
+                                                <p><strong>HTML:</strong> Structure and content</p>
+                                                <p><strong>CSS:</strong> Styling and layout</p>
+                                                <p><strong>JavaScript:</strong> Interactivity and behavior</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="quiz-question">
+                                        <h5>Question 4:</h5>
+                                        <p>What happens when you type a URL and press Enter?</p>
+                                        <div class="quiz-answer" onclick="toggleAnswer(this)">
+                                            <span class="answer-toggle">Click to reveal answer</span>
+                                            <div class="answer-content">
+                                                <ol>
+                                                    <li>DNS lookup converts the domain name to an IP address</li>
+                                                    <li>Browser sends an HTTP request to the server</li>
+                                                    <li>Server responds with HTML, CSS, and JavaScript files</li>
+                                                    <li>Browser renders the page and displays it to you</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="quiz-question">
+                                        <h5>Question 5:</h5>
+                                        <p>What's the difference between HTTP and HTTPS?</p>
+                                        <div class="quiz-answer" onclick="toggleAnswer(this)">
+                                            <span class="answer-toggle">Click to reveal answer</span>
+                                            <div class="answer-content">
+                                                <p><strong>HTTP:</strong> Unsecured protocol - data is sent in plain
+                                                    text</p>
+                                                <p><strong>HTTPS:</strong> Secured protocol - data is encrypted for
+                                                    privacy and security</p>
+                                                <p>Always use HTTPS for sensitive information like passwords and credit
+                                                    card details!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="success-message">
+                                    <h5><i class="fas fa-check-circle"></i> Great Job!</h5>
+                                    <p>If you understood these concepts, you're ready to start learning HTML and CSS!
+                                        The foundation you've built here will help you understand how everything fits
+                                        together.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HTML Basics Section -->
+        <section id="html-basics" class="section">
+            <div class="container">
+                <h2>HTML Basics</h2>
+                <p class="section-intro">HTML (HyperText Markup Language) is the standard markup language for creating
+                    web pages.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-tags"></i> HTML Tags</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>What are HTML Tags?</h4>
+                                <p>HTML tags are the building blocks of web pages. They tell the browser how to
+                                    structure and display content. Tags are enclosed in angle brackets
+                                    <code>&lt; &gt;</code> and usually come in pairs: opening and closing tags.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Key Points:</h5>
+                                    <ul>
+                                        <li><strong>Opening Tag:</strong> <code>&lt;tagname&gt;</code> - starts the
+                                            element</li>
+                                        <li><strong>Closing Tag:</strong> <code>&lt;/tagname&gt;</code> - ends the
+                                            element</li>
+                                        <li><strong>Content:</strong> Goes between opening and closing tags</li>
+                                        <li><strong>Self-closing:</strong> Some tags like <code>&lt;img&gt;</code> don't
+                                            need closing tags</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="example-box">
+                                <h4>Basic HTML Structure</h4>
+                                <div class="concept-explanation">
+                                    <p>Every HTML document needs these essential elements:</p>
+                                    <ul>
+                                        <li><code>&lt;!DOCTYPE html&gt;</code> - Declares this is an HTML5 document</li>
+                                        <li><code>&lt;html&gt;</code> - Root element containing all content</li>
+                                        <li><code>&lt;head&gt;</code> - Contains metadata (title, links, scripts)</li>
+                                        <li><code>&lt;body&gt;</code> - Contains visible page content</li>
+                                    </ul>
+                                </div>
+                                <div class="code-example">
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Heading 1&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                                <div class="live-preview">
+                                    <h4>Live Preview:</h4>
+                                    <div class="preview-frame">
+                                        <h1>Heading 1</h1>
+                                        <p>This is a paragraph.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-list"></i> Common HTML Elements</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Types of HTML Elements</h4>
+                                <p>HTML elements can be categorized into different types based on their purpose and
+                                    behavior:</p>
+
+                                <div class="element-types">
+                                    <div class="type-card">
+                                        <h5><i class="fas fa-heading"></i> Block Elements</h5>
+                                        <p>Take up the full width available and start on a new line</p>
+                                        <ul>
+                                            <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> - Headings</li>
+                                            <li><code>&lt;p&gt;</code> - Paragraphs</li>
+                                            <li><code>&lt;div&gt;</code> - Division/container</li>
+                                            <li><code>&lt;section&gt;</code> - Section of content</li>
+                                        </ul>
+                                    </div>
+                                    <div class="type-card">
+                                        <h5><i class="fas fa-align-left"></i> Inline Elements</h5>
+                                        <p>Only take up as much width as necessary</p>
+                                        <ul>
+                                            <li><code>&lt;a&gt;</code> - Links</li>
+                                            <li><code>&lt;span&gt;</code> - Inline container</li>
+                                            <li><code>&lt;strong&gt;</code> - Bold text</li>
+                                            <li><code>&lt;em&gt;</code> - Italic text</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="element-grid">
+                                <div class="element-card">
+                                    <h4>&lt;h1&gt; to &lt;h6&gt;</h4>
+                                    <p><strong>Purpose:</strong> Create headings with different levels of importance</p>
+                                    <div class="element-info">
+                                        <p><strong>Usage:</strong> Use <code>&lt;h1&gt;</code> for main title,
+                                            <code>&lt;h2&gt;</code> for sections, etc.</p>
+                                        <p><strong>SEO:</strong> Search engines use headings to understand page
+                                            structure</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <h1>H1 - Main Title</h1>
+                                        <h2>H2 - Section</h2>
+                                        <h3>H3 - Subsection</h3>
+                                    </div>
+                                </div>
+                                <div class="element-card">
+                                    <h4>&lt;p&gt;</h4>
+                                    <p><strong>Purpose:</strong> Define paragraphs of text</p>
+                                    <div class="element-info">
+                                        <p><strong>Block Element:</strong> Starts on a new line and takes full width</p>
+                                        <p><strong>Spacing:</strong> Browsers add margin above and below</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <p>This is a paragraph with text. It automatically wraps to new lines and has
+                                            spacing around it.</p>
+                                    </div>
+                                </div>
+                                <div class="element-card">
+                                    <h4>&lt;a&gt;</h4>
+                                    <p><strong>Purpose:</strong> Create hyperlinks to other pages or resources</p>
+                                    <div class="element-info">
+                                        <p><strong>Required Attribute:</strong> <code>href</code> specifies the
+                                            destination</p>
+                                        <p><strong>Target:</strong> Use <code>target="_blank"</code> to open in new tab
+                                        </p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <a href="#" class="demo-link">Click me!</a>
+                                        <br><br>
+                                        <a href="#" target="_blank" class="demo-link">Open in new tab</a>
+                                    </div>
+                                </div>
+                                <div class="element-card">
+                                    <h4>&lt;img&gt;</h4>
+                                    <p><strong>Purpose:</strong> Display images on the page</p>
+                                    <div class="element-info">
+                                        <p><strong>Required Attributes:</strong></p>
+                                        <ul>
+                                            <li><code>src</code> - Image source URL</li>
+                                            <li><code>alt</code> - Alternative text for accessibility</li>
+                                        </ul>
+                                        <p><strong>Self-closing:</strong> No closing tag needed</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMCAyMEg4MFY4MEgyMFYyMFoiIGZpbGw9IiNFNUU3RUIiLz4KPHN2ZyB4PSIzMCIgeT0iMzAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjOUI5QkEwIj4KPHBhdGggZD0iTTE5IDNIMVYyMUgyMVY1TDE5IDNaTTE5IDVWMTlIM1Y1SDE5Wk0xNyAxM0gxMVYxMUgxN1YxM1pNMTcgMTdIMTFWMTVIMTdWMTdaIi8+Cjwvc3ZnPgo8L3N2Zz4K"
+                                            alt="Demo image" class="demo-img">
+                                        <p class="img-caption">Image with alt text for accessibility</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Semantic HTML Section -->
+        <section id="semantic-html" class="section">
+            <div class="container">
+                <h2>Semantic HTML</h2>
+                <p class="section-intro">Semantic HTML uses meaningful tags that describe the content's purpose, making
+                    your code more readable and accessible.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-tags"></i> What is Semantic HTML?</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Why Semantic HTML Matters</h4>
+                                <p>Semantic HTML uses tags that clearly describe their content's purpose. Instead of
+                                    using generic <code>&lt;div&gt;</code> tags everywhere, semantic tags tell both
+                                    browsers and developers what the content represents.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Benefits of Semantic HTML:</h5>
+                                    <ul>
+                                        <li><strong>Accessibility:</strong> Screen readers understand your content
+                                            better</li>
+                                        <li><strong>SEO:</strong> Search engines can better index your content</li>
+                                        <li><strong>Maintainability:</strong> Code is easier to read and understand</li>
+                                        <li><strong>Future-proof:</strong> Better compatibility with new technologies
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="semantic-comparison">
+                                <h4>Non-Semantic vs Semantic HTML</h4>
+                                <div class="comparison-grid">
+                                    <div class="comparison-card">
+                                        <h5><i class="fas fa-times-circle"></i> Non-Semantic</h5>
+                                        <div class="code-example">
+                                            <pre><code>&lt;div class="header"&gt;
+    &lt;div class="nav"&gt;Navigation&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main"&gt;
+    &lt;div class="article"&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;Footer&lt;/div&gt;</code></pre>
+                                        </div>
+                                        <p>Generic divs with classes - unclear purpose</p>
+                                    </div>
+                                    <div class="comparison-card">
+                                        <h5><i class="fas fa-check-circle"></i> Semantic</h5>
+                                        <div class="code-example">
+                                            <pre><code>&lt;header&gt;
+    &lt;nav&gt;Navigation&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;Content&lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;</code></pre>
+                                        </div>
+                                        <p>Meaningful tags - clear purpose and structure</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-sitemap"></i> Common Semantic Elements</h3>
+                        <div class="module-content">
+                            <div class="semantic-elements">
+                                <div class="semantic-card">
+                                    <h4>&lt;header&gt;</h4>
+                                    <p><strong>Purpose:</strong> Contains introductory content, navigation, or heading
+                                    </p>
+                                    <div class="element-info">
+                                        <p><strong>Use for:</strong> Page header, article header, section header</p>
+                                        <p><strong>Common content:</strong> Logo, navigation, page title</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <header class="demo-header">
+                                            <h1>Website Title</h1>
+                                            <nav>Navigation Menu</nav>
+                                        </header>
+                                    </div>
+                                </div>
+
+                                <div class="semantic-card">
+                                    <h4>&lt;nav&gt;</h4>
+                                    <p><strong>Purpose:</strong> Contains navigation links</p>
+                                    <div class="element-info">
+                                        <p><strong>Use for:</strong> Main navigation, breadcrumbs, pagination</p>
+                                        <p><strong>Accessibility:</strong> Screen readers identify this as navigation
+                                        </p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <nav class="demo-nav">
+                                            <a href="#">Home</a>
+                                            <a href="#">About</a>
+                                            <a href="#">Contact</a>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                                <div class="semantic-card">
+                                    <h4>&lt;main&gt;</h4>
+                                    <p><strong>Purpose:</strong> Contains the main content of the page</p>
+                                    <div class="element-info">
+                                        <p><strong>Use for:</strong> Primary content area</p>
+                                        <p><strong>Important:</strong> Only one &lt;main&gt; per page</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <main class="demo-main">
+                                            <h2>Main Content</h2>
+                                            <p>This is the primary content of the page.</p>
+                                        </main>
+                                    </div>
+                                </div>
+
+                                <div class="semantic-card">
+                                    <h4>&lt;article&gt;</h4>
+                                    <p><strong>Purpose:</strong> Self-contained content that could be distributed
+                                        independently</p>
+                                    <div class="element-info">
+                                        <p><strong>Use for:</strong> Blog posts, news articles, forum posts</p>
+                                        <p><strong>Example:</strong> A blog post that could be shared on social media
+                                        </p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <article class="demo-article">
+                                            <h3>Blog Post Title</h3>
+                                            <p>This is a self-contained article that could be shared independently.</p>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="semantic-card">
+                                    <h4>&lt;section&gt;</h4>
+                                    <p><strong>Purpose:</strong> Groups related content with a heading</p>
+                                    <div class="element-info">
+                                        <p><strong>Use for:</strong> Chapters, tabs, numbered sections</p>
+                                        <p><strong>Requirement:</strong> Should have a heading</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <section class="demo-section">
+                                            <h3>Section Title</h3>
+                                            <p>This section groups related content together.</p>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <div class="semantic-card">
+                                    <h4>&lt;aside&gt;</h4>
+                                    <p><strong>Purpose:</strong> Content that is tangentially related to main content
+                                    </p>
+                                    <div class="element-info">
+                                        <p><strong>Use for:</strong> Sidebars, pull quotes, advertising</p>
+                                        <p><strong>Example:</strong> Related articles, author bio</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <aside class="demo-aside">
+                                            <h4>Related Articles</h4>
+                                            <ul>
+                                                <li>Article 1</li>
+                                                <li>Article 2</li>
+                                            </ul>
+                                        </aside>
+                                    </div>
+                                </div>
+
+                                <div class="semantic-card">
+                                    <h4>&lt;footer&gt;</h4>
+                                    <p><strong>Purpose:</strong> Contains footer information</p>
+                                    <div class="element-info">
+                                        <p><strong>Use for:</strong> Copyright, contact info, links</p>
+                                        <p><strong>Scope:</strong> Can be page footer or section footer</p>
+                                    </div>
+                                    <div class="element-demo">
+                                        <footer class="demo-footer">
+                                            <p>&copy; 2025 Website. All rights reserved.</p>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-code"></i> Semantic HTML Structure</h3>
+                        <div class="module-content">
+                            <div class="structure-example">
+                                <h4>Complete Semantic Page Structure</h4>
+                                <div class="code-example">
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Semantic HTML Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Website Title&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#"&gt;Home&lt;/a&gt;
+            &lt;a href="#"&gt;About&lt;/a&gt;
+            &lt;a href="#"&gt;Contact&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Article Title&lt;/h2&gt;
+                &lt;p&gt;Published on &lt;time datetime="2024-01-15"&gt;January 15, 2024&lt;/time&gt;&lt;/p&gt;
+            &lt;/header&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Introduction&lt;/h3&gt;
+                &lt;p&gt;Article content here...&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Main Content&lt;/h3&gt;
+                &lt;p&gt;More content...&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;Related Articles&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Related Article 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Related Article 2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 Website. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                                <div class="structure-visual">
+                                    <h4>Visual Structure:</h4>
+                                    <div class="structure-diagram">
+                                        <div class="structure-item header">Header</div>
+                                        <div class="structure-item main">
+                                            <div class="structure-item article">Article</div>
+                                            <div class="structure-item aside">Aside</div>
+                                        </div>
+                                        <div class="structure-item footer">Footer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms & Inputs Section -->
+        <section id="forms-inputs" class="section">
+            <div class="container">
+                <h2>Forms & Inputs</h2>
+                <p class="section-intro">Forms allow users to interact with your website by submitting data. Learn about
+                    form elements, validation, and accessibility.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-wpforms"></i> Form Basics</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>What are HTML Forms?</h4>
+                                <p>HTML forms collect user input and send it to a server for processing. Forms are
+                                    essential for user interaction on websites.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Form Components:</h5>
+                                    <ul>
+                                        <li><strong>&lt;form&gt;</strong> - Container for form elements</li>
+                                        <li><strong>&lt;input&gt;</strong> - Various input types (text, email, password)
+                                        </li>
+                                        <li><strong>&lt;label&gt;</strong> - Descriptive text for inputs</li>
+                                        <li><strong>&lt;textarea&gt;</strong> - Multi-line text input</li>
+                                        <li><strong>&lt;select&gt;</strong> - Dropdown selection</li>
+                                        <li><strong>&lt;button&gt;</strong> - Form submission or actions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="form-example">
+                                <h4>Basic Form Structure</h4>
+                                <div class="code-example">
+                                    <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                                </div>
+                                <div class="live-preview">
+                                    <h4>Live Form Example:</h4>
+                                    <div class="preview-frame">
+                                        <form class="demo-form" onsubmit="return false;">
+                                            <div class="form-group">
+                                                <label for="demo-name">Name:</label>
+                                                <input type="text" id="demo-name" name="name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="demo-email">Email:</label>
+                                                <input type="email" id="demo-email" name="email" required>
+                                            </div>
+                                            <button type="submit" class="form-btn">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-keyboard"></i> Input Types</h3>
+                        <div class="module-content">
+                            <div class="input-types">
+                                <div class="input-card">
+                                    <h4>Text Inputs</h4>
+                                    <div class="input-examples">
+                                        <div class="input-example">
+                                            <label for="text-demo">Text:</label>
+                                            <input type="text" id="text-demo" placeholder="Enter text">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="email-demo">Email:</label>
+                                            <input type="email" id="email-demo" placeholder="Enter email">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="password-demo">Password:</label>
+                                            <input type="password" id="password-demo" placeholder="Enter password">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="number-demo">Number:</label>
+                                            <input type="number" id="number-demo" placeholder="Enter number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-card">
+                                    <h4>Selection Inputs</h4>
+                                    <div class="input-examples">
+                                        <div class="input-example">
+                                            <label for="checkbox-demo">Checkbox:</label>
+                                            <input type="checkbox" id="checkbox-demo">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="radio1-demo">Radio 1:</label>
+                                            <input type="radio" id="radio1-demo" name="radio-demo">
+                                            <label for="radio2-demo">Radio 2:</label>
+                                            <input type="radio" id="radio2-demo" name="radio-demo">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="select-demo">Select:</label>
+                                            <select id="select-demo">
+                                                <option value="">Choose an option</option>
+                                                <option value="option1">Option 1</option>
+                                                <option value="option2">Option 2</option>
+                                                <option value="option3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-card">
+                                    <h4>Special Inputs</h4>
+                                    <div class="input-examples">
+                                        <div class="input-example">
+                                            <label for="date-demo">Date:</label>
+                                            <input type="date" id="date-demo">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="color-demo">Color:</label>
+                                            <input type="color" id="color-demo">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="range-demo">Range:</label>
+                                            <input type="range" id="range-demo" min="0" max="100">
+                                        </div>
+                                        <div class="input-example">
+                                            <label for="textarea-demo">Textarea:</label>
+                                            <textarea id="textarea-demo" rows="3"
+                                                placeholder="Enter multi-line text"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-shield-alt"></i> Form Validation & Accessibility</h3>
+                        <div class="module-content">
+                            <div class="validation-examples">
+                                <div class="validation-card">
+                                    <h4>HTML5 Validation</h4>
+                                    <div class="code-example">
+                                        <pre><code>&lt;input type="email" required&gt;
+&lt;input type="number" min="1" max="100"&gt;
+&lt;input type="text" pattern="[A-Za-z]{3}"&gt;
+&lt;input type="text" maxlength="50"&gt;</code></pre>
+                                    </div>
+                                    <div class="validation-demo">
+                                        <form class="validation-form" onsubmit="return false;">
+                                            <div class="form-group">
+                                                <label for="email-valid">Email (required):</label>
+                                                <input type="email" id="email-valid" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="age-valid">Age (1-100):</label>
+                                                <input type="number" id="age-valid" min="1" max="100">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="code-valid">Code (3 letters):</label>
+                                                <input type="text" id="code-valid" pattern="[A-Za-z]{3}"
+                                                    title="Please enter exactly 3 letters">
+                                            </div>
+                                            <button type="submit" class="form-btn">Validate</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="validation-card">
+                                    <h4>Accessibility Best Practices</h4>
+                                    <div class="accessibility-tips">
+                                        <div class="tip-item">
+                                            <h5><i class="fas fa-tag"></i> Proper Labels</h5>
+                                            <code>&lt;label for="input-id"&gt;Label Text&lt;/label&gt;</code>
+                                            <p>Always associate labels with inputs using the <code>for</code> attribute
+                                            </p>
+                                        </div>
+                                        <div class="tip-item">
+                                            <h5><i class="fas fa-eye"></i> Alt Text</h5>
+                                            <code>&lt;img src="image.jpg" alt="Description"&gt;</code>
+                                            <p>Provide meaningful alt text for images</p>
+                                        </div>
+                                        <div class="tip-item">
+                                            <h5><i class="fas fa-keyboard"></i> Keyboard Navigation</h5>
+                                            <code>tabindex="0"</code>
+                                            <p>Ensure all interactive elements are keyboard accessible</p>
+                                        </div>
+                                        <div class="tip-item">
+                                            <h5><i class="fas fa-palette"></i> Color Contrast</h5>
+                                            <p>Use sufficient color contrast (4.5:1 for normal text)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CSS Basics Section -->
+        <section id="css-basics" class="section">
+            <div class="container">
+                <h2>CSS Basics</h2>
+                <p class="section-intro">CSS (Cascading Style Sheets) is used to style and layout web pages.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-palette"></i> CSS Selectors</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>What are CSS Selectors?</h4>
+                                <p>CSS selectors are patterns used to select and style HTML elements. They tell the
+                                    browser which elements to apply styles to. Think of them as "targeting tools" for
+                                    your CSS rules.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Selector Priority (Specificity):</h5>
+                                    <ol>
+                                        <li><strong>ID Selectors</strong> (highest priority) - <code>#id</code></li>
+                                        <li><strong>Class Selectors</strong> - <code>.class</code></li>
+                                        <li><strong>Element Selectors</strong> (lowest priority) - <code>element</code>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <div class="selector-examples">
+                                <div class="selector-card">
+                                    <h4>Element Selector</h4>
+                                    <p><strong>Syntax:</strong> <code>element { property: value; }</code></p>
+                                    <p><strong>Use Case:</strong> Style all elements of a specific type</p>
+                                    <div class="selector-info">
+                                        <p><strong>Example:</strong> <code>p { color: blue; }</code></p>
+                                        <p><strong>Targets:</strong> All <code>&lt;p&gt;</code> elements on the page</p>
+                                    </div>
+                                    <code>p { color: blue; }</code>
+                                    <div class="demo-result">
+                                        <p style="color: blue;">This paragraph is blue</p>
+                                    </div>
+                                </div>
+                                <div class="selector-card">
+                                    <h4>Class Selector</h4>
+                                    <p><strong>Syntax:</strong> <code>.classname { property: value; }</code></p>
+                                    <p><strong>Use Case:</strong> Style multiple elements with the same class</p>
+                                    <div class="selector-info">
+                                        <p><strong>Example:</strong> <code>.highlight { background: yellow; }</code></p>
+                                        <p><strong>Targets:</strong> All elements with <code>class="highlight"</code>
+                                        </p>
+                                        <p><strong>HTML:</strong> <code>&lt;span class="highlight"&gt;</code></p>
+                                    </div>
+                                    <code>.highlight { background: yellow; }</code>
+                                    <div class="demo-result">
+                                        <span class="highlight">This text is highlighted</span>
+                                    </div>
+                                </div>
+                                <div class="selector-card">
+                                    <h4>ID Selector</h4>
+                                    <p><strong>Syntax:</strong> <code>#idname { property: value; }</code></p>
+                                    <p><strong>Use Case:</strong> Style a unique element (use sparingly)</p>
+                                    <div class="selector-info">
+                                        <p><strong>Example:</strong> <code>#main { font-size: 20px; }</code></p>
+                                        <p><strong>Targets:</strong> Element with <code>id="main"</code></p>
+                                        <p><strong>HTML:</strong> <code>&lt;div id="main"&gt;</code></p>
+                                        <p><strong>Note:</strong> IDs must be unique on the page</p>
+                                    </div>
+                                    <code>#main { font-size: 20px; }</code>
+                                    <div class="demo-result">
+                                        <span id="main" style="font-size: 20px;">This text is larger</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-selectors">
+                                <h4>Advanced Selectors</h4>
+                                <div class="selector-grid">
+                                    <div class="advanced-selector">
+                                        <h5>Descendant Selector</h5>
+                                        <code>div p { margin: 10px; }</code>
+                                        <p>Targets <code>&lt;p&gt;</code> elements inside <code>&lt;div&gt;</code></p>
+                                    </div>
+                                    <div class="advanced-selector">
+                                        <h5>Child Selector</h5>
+                                        <code>div > p { color: red; }</code>
+                                        <p>Targets direct <code>&lt;p&gt;</code> children of <code>&lt;div&gt;</code>
+                                        </p>
+                                    </div>
+                                    <div class="advanced-selector">
+                                        <h5>Pseudo-class</h5>
+                                        <code>a:hover { color: purple; }</code>
+                                        <p>Styles links when mouse hovers over them</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-paint-brush"></i> CSS Properties</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>What are CSS Properties?</h4>
+                                <p>CSS properties define how HTML elements should be styled. Each property has a
+                                    specific purpose and accepts different values. Properties are written in the format:
+                                    <code>property: value;</code></p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> CSS Property Categories:</h5>
+                                    <ul>
+                                        <li><strong>Layout:</strong> display, position, float, clear</li>
+                                        <li><strong>Typography:</strong> font-family, font-size, font-weight, text-align
+                                        </li>
+                                        <li><strong>Colors:</strong> color, background-color, border-color</li>
+                                        <li><strong>Spacing:</strong> margin, padding, width, height</li>
+                                        <li><strong>Effects:</strong> box-shadow, border-radius, opacity</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="properties-grid">
+                                <div class="property-card">
+                                    <h4>Color & Background</h4>
+                                    <div class="property-info">
+                                        <h5>Common Color Properties:</h5>
+                                        <ul>
+                                            <li><code>color</code> - Text color</li>
+                                            <li><code>background-color</code> - Background color</li>
+                                            <li><code>background-image</code> - Background images</li>
+                                            <li><code>background-gradient</code> - Gradient backgrounds</li>
+                                        </ul>
+                                        <h5>Color Values:</h5>
+                                        <ul>
+                                            <li><code>#ff0000</code> - Hexadecimal</li>
+                                            <li><code>rgb(255, 0, 0)</code> - RGB</li>
+                                            <li><code>red</code> - Named colors</li>
+                                            <li><code>rgba(255, 0, 0, 0.5)</code> - RGB with opacity</li>
+                                        </ul>
+                                    </div>
+                                    <div class="property-demo">
+                                        <div class="color-demo"
+                                            style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); color: white; padding: 20px; border-radius: 8px;">
+                                            <p>Background gradient with white text</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-card">
+                                    <h4>Typography</h4>
+                                    <div class="property-info">
+                                        <h5>Font Properties:</h5>
+                                        <ul>
+                                            <li><code>font-family</code> - Font type (Arial, Georgia, etc.)</li>
+                                            <li><code>font-size</code> - Text size (px, em, rem)</li>
+                                            <li><code>font-weight</code> - Boldness (normal, bold, 100-900)</li>
+                                            <li><code>font-style</code> - Italic, normal</li>
+                                            <li><code>text-align</code> - Left, center, right, justify</li>
+                                        </ul>
+                                        <h5>Text Properties:</h5>
+                                        <ul>
+                                            <li><code>text-decoration</code> - Underline, overline, none</li>
+                                            <li><code>text-transform</code> - Uppercase, lowercase, capitalize</li>
+                                            <li><code>line-height</code> - Space between lines</li>
+                                        </ul>
+                                    </div>
+                                    <div class="property-demo">
+                                        <p
+                                            style="font-family: 'Georgia', serif; font-size: 18px; font-weight: bold; font-style: italic;">
+                                            Bold italic text in Georgia font
+                                        </p>
+                                        <p style="text-transform: uppercase; text-decoration: underline;">
+                                            Uppercase underlined text
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="property-card">
+                                    <h4>Spacing & Layout</h4>
+                                    <div class="property-info">
+                                        <h5>Box Model Properties:</h5>
+                                        <ul>
+                                            <li><code>margin</code> - Space outside the element</li>
+                                            <li><code>padding</code> - Space inside the element</li>
+                                            <li><code>border</code> - Border around the element</li>
+                                            <li><code>width/height</code> - Element dimensions</li>
+                                        </ul>
+                                        <h5>Spacing Values:</h5>
+                                        <ul>
+                                            <li><code>20px</code> - Pixels (fixed)</li>
+                                            <li><code>2em</code> - Relative to font size</li>
+                                            <li><code>50%</code> - Percentage of parent</li>
+                                            <li><code>auto</code> - Automatic calculation</li>
+                                        </ul>
+                                    </div>
+                                    <div class="property-demo">
+                                        <div
+                                            style="margin: 20px; padding: 15px; border: 2px solid #333; background: #f0f0f0;">
+                                            <p>Box with margin (outside) and padding (inside)</p>
+                                            <p
+                                                style="margin: 10px 0; padding: 5px; background: white; border: 1px solid #ccc;">
+                                                Inner box with its own spacing
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="css-units">
+                                <h4>CSS Units Explained</h4>
+                                <div class="units-grid">
+                                    <div class="unit-card">
+                                        <h5>Absolute Units</h5>
+                                        <ul>
+                                            <li><code>px</code> - Pixels (1px = 1/96 inch)</li>
+                                            <li><code>pt</code> - Points (1pt = 1/72 inch)</li>
+                                            <li><code>in</code> - Inches</li>
+                                            <li><code>cm</code> - Centimeters</li>
+                                        </ul>
+                                    </div>
+                                    <div class="unit-card">
+                                        <h5>Relative Units</h5>
+                                        <ul>
+                                            <li><code>em</code> - Relative to parent font size</li>
+                                            <li><code>rem</code> - Relative to root font size</li>
+                                            <li><code>%</code> - Percentage of parent</li>
+                                            <li><code>vw/vh</code> - Viewport width/height</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Styling Methods Section -->
+        <section id="styling" class="section">
+            <div class="container">
+                <h2>CSS Styling Methods</h2>
+                <p class="section-intro">Learn the different ways to apply CSS to your HTML elements.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-code"></i> Inline Styling</h3>
+                        <div class="module-content">
+                            <div class="styling-example">
+                                <h4>HTML with Inline Styles:</h4>
+                                <div class="code-example">
+                                    <pre><code>&lt;h1 style="color: red; font-size: 24px;"&gt;
+    Hello World!
+&lt;/h1&gt;</code></pre>
+                                </div>
+                                <div class="live-preview">
+                                    <h4>Result:</h4>
+                                    <div class="preview-frame">
+                                        <h1 style="color: red; font-size: 24px;">Hello World!</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-file-code"></i> Internal CSS</h3>
+                        <div class="module-content">
+                            <div class="styling-example">
+                                <h4>CSS in &lt;head&gt; section:</h4>
+                                <div class="code-example">
+                                    <pre><code>&lt;style&gt;
+    .my-class {
+        background-color: lightblue;
+        padding: 10px;
+        border-radius: 5px;
+    }
+&lt;/style&gt;
+
+&lt;div class="my-class"&gt;
+    Styled with internal CSS
+&lt;/div&gt;</code></pre>
+                                </div>
+                                <div class="live-preview">
+                                    <h4>Result:</h4>
+                                    <div class="preview-frame">
+                                        <div class="my-class">Styled with internal CSS</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-external-link-alt"></i> External CSS</h3>
+                        <div class="module-content">
+                            <div class="styling-example">
+                                <h4>External stylesheet (styles.css):</h4>
+                                <div class="code-example">
+                                    <pre><code>/* styles.css */
+.external-style {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}</code></pre>
+                                </div>
+                                <div class="live-preview">
+                                    <h4>Result:</h4>
+                                    <div class="preview-frame">
+                                        <div class="external-style">Styled with external CSS</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout Section -->
+        <section id="layout" class="section">
+            <div class="container">
+                <h2>CSS Layout & Flexbox</h2>
+                <p class="section-intro">Master modern CSS layout techniques including Flexbox and CSS Grid.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-boxes"></i> CSS Variables (Custom Properties)</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>What are CSS Variables?</h4>
+                                <p>CSS Variables (also called Custom Properties) allow you to store reusable values in
+                                    your CSS. They make it easy to maintain consistent styling across your website and
+                                    make changes in one place.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Benefits of CSS Variables:</h5>
+                                    <ul>
+                                        <li><strong>Consistency:</strong> Use the same colors, fonts, and spacing
+                                            throughout</li>
+                                        <li><strong>Maintainability:</strong> Change values in one place, updates
+                                            everywhere</li>
+                                        <li><strong>Readability:</strong> Meaningful names instead of magic numbers</li>
+                                        <li><strong>Dynamic:</strong> Can be changed with JavaScript</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="variables-example">
+                                <h4>Defining CSS Variables:</h4>
+                                <div class="concept-explanation">
+                                    <p><strong>Syntax:</strong> Variables are defined with <code>--variable-name</code>
+                                        and used with <code>var(--variable-name)</code></p>
+                                    <ul>
+                                        <li><code>:root</code> - Global scope (available everywhere)</li>
+                                        <li><code>--variable-name</code> - Must start with two dashes</li>
+                                        <li><code>var(--variable-name)</code> - Function to use the variable</li>
+                                        <li><code>var(--variable-name, fallback)</code> - With fallback value</li>
+                                    </ul>
+                                </div>
+                                <div class="code-example">
+                                    <pre><code>:root {
+    --primary-color: #3498db;
+    --secondary-color: #e74c3c;
+    --font-family: 'Arial', sans-serif;
+    --spacing: 20px;
+}
+
+.button {
+    background-color: var(--primary-color);
+    font-family: var(--font-family);
+    padding: var(--spacing);
+}</code></pre>
+                                </div>
+                                <div class="live-preview">
+                                    <h4>Variables in Action:</h4>
+                                    <div class="preview-frame">
+                                        <button class="css-var-button">Button with CSS Variables</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="variable-scope">
+                                <h4>Variable Scope</h4>
+                                <div class="scope-examples">
+                                    <div class="scope-card">
+                                        <h5>Global Scope (:root)</h5>
+                                        <code>:root { --color: blue; }</code>
+                                        <p>Available throughout the entire document</p>
+                                    </div>
+                                    <div class="scope-card">
+                                        <h5>Local Scope (Element)</h5>
+                                        <code>.container { --color: red; }</code>
+                                        <p>Only available within that element and its children</p>
+                                    </div>
+                                    <div class="scope-card">
+                                        <h5>Fallback Values</h5>
+                                        <code>color: var(--text-color, black);</code>
+                                        <p>Use fallback if variable is not defined</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="variable-types">
+                                <h4>Common Variable Types</h4>
+                                <div class="types-grid">
+                                    <div class="type-example">
+                                        <h5>Colors</h5>
+                                        <code>--primary: #3498db;</code>
+                                        <code>--secondary: #e74c3c;</code>
+                                        <code>--text: #333;</code>
+                                    </div>
+                                    <div class="type-example">
+                                        <h5>Spacing</h5>
+                                        <code>--spacing-xs: 8px;</code>
+                                        <code>--spacing-md: 16px;</code>
+                                        <code>--spacing-lg: 24px;</code>
+                                    </div>
+                                    <div class="type-example">
+                                        <h5>Typography</h5>
+                                        <code>--font-family: 'Arial';</code>
+                                        <code>--font-size: 16px;</code>
+                                        <code>--line-height: 1.5;</code>
+                                    </div>
+                                    <div class="type-example">
+                                        <h5>Breakpoints</h5>
+                                        <code>--mobile: 768px;</code>
+                                        <code>--tablet: 1024px;</code>
+                                        <code>--desktop: 1200px;</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-th-large"></i> Flexbox Layout</h3>
+                        <div class="module-content">
+                            <div class="flexbox-examples">
+                                <div class="flex-example">
+                                    <h4>Flexbox Container:</h4>
+                                    <div class="code-example">
+                                        <pre><code>.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}</code></pre>
+                                    </div>
+                                    <div class="live-preview">
+                                        <h4>Flexbox Demo:</h4>
+                                        <div class="flex-demo">
+                                            <div class="flex-item">Item 1</div>
+                                            <div class="flex-item">Item 2</div>
+                                            <div class="flex-item">Item 3</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-border-all"></i> CSS Grid</h3>
+                        <div class="module-content">
+                            <div class="grid-example">
+                                <h4>Grid Layout:</h4>
+                                <div class="code-example">
+                                    <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}</code></pre>
+                                </div>
+                                <div class="live-preview">
+                                    <h4>Grid Demo:</h4>
+                                    <div class="grid-demo">
+                                        <div class="grid-item">Grid Item 1</div>
+                                        <div class="grid-item">Grid Item 2</div>
+                                        <div class="grid-item">Grid Item 3</div>
+                                        <div class="grid-item">Grid Item 4</div>
+                                        <div class="grid-item">Grid Item 5</div>
+                                        <div class="grid-item">Grid Item 6</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsive Design Section -->
+        <section id="responsive" class="section">
+            <div class="container">
+                <h2>Responsive Design</h2>
+                <p class="section-intro">Learn how to create websites that work beautifully on all devices using media
+                    queries and mobile-first design principles.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-mobile-alt"></i> What is Responsive Design?</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Why Responsive Design Matters</h4>
+                                <p>Responsive design ensures your website looks and works great on all devices - from
+                                    mobile phones to desktop computers. It adapts the layout, content, and functionality
+                                    based on screen size.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Responsive Design Principles:</h5>
+                                    <ul>
+                                        <li><strong>Mobile-First:</strong> Design for mobile first, then enhance for
+                                            larger screens</li>
+                                        <li><strong>Fluid Grids:</strong> Use flexible layouts that adapt to screen size
+                                        </li>
+                                        <li><strong>Flexible Images:</strong> Images that scale without breaking layout
+                                        </li>
+                                        <li><strong>Media Queries:</strong> CSS rules that apply based on screen
+                                            characteristics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="responsive-demo">
+                                <h4>Responsive Layout Demo</h4>
+                                <div class="responsive-container">
+                                    <div class="responsive-item">Item 1</div>
+                                    <div class="responsive-item">Item 2</div>
+                                    <div class="responsive-item">Item 3</div>
+                                    <div class="responsive-item">Item 4</div>
+                                </div>
+                                <p class="demo-note">Resize your browser window to see how the layout adapts!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-code"></i> Media Queries</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Understanding Media Queries</h4>
+                                <p>Media queries allow you to apply different CSS styles based on device characteristics
+                                    like screen width, height, orientation, and resolution.</p>
+                            </div>
+
+                            <div class="media-query-examples">
+                                <div class="query-card">
+                                    <h4>Basic Media Query</h4>
+                                    <div class="code-example">
+                                        <pre><code>/* Mobile styles (default) */
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .container {
+        width: 1000px;
+    }
+}</code></pre>
+                                    </div>
+                                    <div class="query-explanation">
+                                        <p><strong>Breakpoints:</strong></p>
+                                        <ul>
+                                            <li><code>768px</code> - Tablet and up</li>
+                                            <li><code>1024px</code> - Desktop and up</li>
+                                            <li><code>1200px</code> - Large desktop</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="query-card">
+                                    <h4>Common Media Query Patterns</h4>
+                                    <div class="query-patterns">
+                                        <div class="pattern-item">
+                                            <h5>Mobile-First (Recommended)</h5>
+                                            <code>@media (min-width: 768px) { /* styles */ }</code>
+                                            <p>Start with mobile styles, add for larger screens</p>
+                                        </div>
+                                        <div class="pattern-item">
+                                            <h5>Desktop-First</h5>
+                                            <code>@media (max-width: 767px) { /* styles */ }</code>
+                                            <p>Start with desktop styles, override for smaller screens</p>
+                                        </div>
+                                        <div class="pattern-item">
+                                            <h5>Orientation</h5>
+                                            <code>@media (orientation: landscape) { /* styles */ }</code>
+                                            <p>Apply styles based on device orientation</p>
+                                        </div>
+                                        <div class="pattern-item">
+                                            <h5>High-DPI Screens</h5>
+                                            <code>@media (-webkit-min-device-pixel-ratio: 2) { /* styles */ }</code>
+                                            <p>Target retina/high-resolution displays</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-th-large"></i> Responsive Navigation</h3>
+                        <div class="module-content">
+                            <div class="nav-examples">
+                                <div class="nav-example">
+                                    <h4>Mobile-First Navigation</h4>
+                                    <div class="code-example">
+                                        <pre><code>/* Mobile navigation */
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-menu.active {
+    display: block;
+}
+
+/* Desktop navigation */
+@media (min-width: 768px) {
+    .nav-menu {
+        display: flex;
+        position: static;
+        width: auto;
+        background: none;
+        box-shadow: none;
+    }
+    
+    .hamburger {
+        display: none;
+    }
+}</code></pre>
+                                    </div>
+                                    <div class="nav-demo">
+                                        <nav class="responsive-nav-demo">
+                                            <div class="nav-brand">Logo</div>
+                                            <ul class="nav-menu-demo">
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">About</a></li>
+                                                <li><a href="#">Services</a></li>
+                                                <li><a href="#">Contact</a></li>
+                                            </ul>
+                                            <button class="hamburger-demo">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </button>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-images"></i> Responsive Images</h3>
+                        <div class="module-content">
+                            <div class="image-examples">
+                                <div class="image-card">
+                                    <h4>Fluid Images</h4>
+                                    <div class="code-example">
+                                        <pre><code>img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}</code></pre>
+                                    </div>
+                                    <div class="image-demo">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0wIDBIMzAwVjIwMEgwVjBaIiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiMzNDk4ZGIiLz4KPC9zdmc+Cg=="
+                                            alt="Responsive image demo" class="responsive-img-demo">
+                                    </div>
+                                </div>
+
+                                <div class="image-card">
+                                    <h4>Picture Element</h4>
+                                    <div class="code-example">
+                                        <pre><code>&lt;picture&gt;
+    &lt;source media="(min-width: 768px)" 
+            srcset="large-image.jpg"&gt;
+    &lt;source media="(min-width: 480px)" 
+            srcset="medium-image.jpg"&gt;
+    &lt;img src="small-image.jpg" alt="Description"&gt;
+&lt;/picture&gt;</code></pre>
+                                    </div>
+                                    <div class="image-demo">
+                                        <picture class="picture-demo">
+                                            <source media="(min-width: 768px)"
+                                                srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0wIDBINDAwVjMwMEgwVjBaIiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiMzNDk4ZGIiLz4KPC9zdmc+Cg==">
+                                            <source media="(min-width: 480px)"
+                                                srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0wIDBIMzAwVjIwMEgwVjBaIiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiMzNDk4ZGIiLz4KPC9zdmc+Cg==">
+                                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0wIDBIMjAwVjE1MEgwVjBaIiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9Ijc1IiByPSIzMCIgZmlsbD0iIzM0OThkYiIvPgo8L3N2Zz4K"
+                                                alt="Responsive picture demo">
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CSS Animations Section -->
+        <section id="animations" class="section">
+            <div class="container">
+                <h2>CSS Transitions & Animations</h2>
+                <p class="section-intro">Learn how to add smooth transitions and engaging animations to make your
+                    websites more interactive and modern.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-magic"></i> CSS Transitions</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>What are CSS Transitions?</h4>
+                                <p>CSS transitions allow you to smoothly change property values over a specified
+                                    duration. They create smooth animations between different states of an element.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Transition Properties:</h5>
+                                    <ul>
+                                        <li><code>transition-property</code> - Which properties to animate</li>
+                                        <li><code>transition-duration</code> - How long the animation takes</li>
+                                        <li><code>transition-timing-function</code> - The speed curve</li>
+                                        <li><code>transition-delay</code> - When to start the animation</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="transition-examples">
+                                <div class="transition-card">
+                                    <h4>Basic Transition</h4>
+                                    <div class="code-example">
+                                        <pre><code>.button {
+    background: blue;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: red;
+}</code></pre>
+                                    </div>
+                                    <div class="transition-demo">
+                                        <button class="transition-btn">Hover me!</button>
+                                    </div>
+                                </div>
+
+                                <div class="transition-card">
+                                    <h4>Multiple Properties</h4>
+                                    <div class="code-example">
+                                        <pre><code>.card {
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}</code></pre>
+                                    </div>
+                                    <div class="transition-demo">
+                                        <div class="transition-card-demo">Hover me!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-play"></i> CSS Animations</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>What are CSS Animations?</h4>
+                                <p>CSS animations let you create complex animations using keyframes. Unlike transitions,
+                                    animations can have multiple steps and can run automatically.</p>
+                            </div>
+
+                            <div class="animation-examples">
+                                <div class="animation-card">
+                                    <h4>@keyframes Animation</h4>
+                                    <div class="code-example">
+                                        <pre><code>@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.bouncing-element {
+    animation: bounce 2s infinite;
+}</code></pre>
+                                    </div>
+                                    <div class="animation-demo">
+                                        <div class="bouncing-element">Bounce!</div>
+                                    </div>
+                                </div>
+
+                                <div class="animation-card">
+                                    <h4>Loading Animation</h4>
+                                    <div class="code-example">
+                                        <pre><code>@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loader {
+    animation: spin 1s linear infinite;
+}</code></pre>
+                                    </div>
+                                    <div class="animation-demo">
+                                        <div class="loader"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-sliders-h"></i> Animation Properties</h3>
+                        <div class="module-content">
+                            <div class="animation-properties">
+                                <div class="property-grid">
+                                    <div class="property-item">
+                                        <h4>animation-name</h4>
+                                        <p>Specifies the name of the @keyframes animation</p>
+                                        <code>animation-name: slideIn;</code>
+                                    </div>
+                                    <div class="property-item">
+                                        <h4>animation-duration</h4>
+                                        <p>How long the animation takes to complete</p>
+                                        <code>animation-duration: 2s;</code>
+                                    </div>
+                                    <div class="property-item">
+                                        <h4>animation-timing-function</h4>
+                                        <p>Speed curve of the animation</p>
+                                        <code>animation-timing-function: ease-in-out;</code>
+                                    </div>
+                                    <div class="property-item">
+                                        <h4>animation-delay</h4>
+                                        <p>When the animation starts</p>
+                                        <code>animation-delay: 1s;</code>
+                                    </div>
+                                    <div class="property-item">
+                                        <h4>animation-iteration-count</h4>
+                                        <p>How many times the animation runs</p>
+                                        <code>animation-iteration-count: infinite;</code>
+                                    </div>
+                                    <div class="property-item">
+                                        <h4>animation-direction</h4>
+                                        <p>Whether animation plays forwards, backwards, or alternating</p>
+                                        <code>animation-direction: alternate;</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility Section -->
+        <section id="accessibility" class="section">
+            <div class="container">
+                <h2>Web Accessibility</h2>
+                <p class="section-intro">Learn how to make your websites accessible to all users, including those with
+                    disabilities.</p>
+
+                <div class="learning-modules">
+                    <div class="module">
+                        <h3><i class="fas fa-universal-access"></i> What is Web Accessibility?</h3>
+                        <div class="module-content">
+                            <div class="concept-explanation">
+                                <h4>Why Accessibility Matters</h4>
+                                <p>Web accessibility means making websites usable by people with disabilities. This
+                                    includes users with visual, auditory, motor, and cognitive impairments.</p>
+
+                                <div class="note-box">
+                                    <h5><i class="fas fa-lightbulb"></i> Accessibility Benefits:</h5>
+                                    <ul>
+                                        <li><strong>Inclusive Design:</strong> Websites work for everyone</li>
+                                        <li><strong>Legal Compliance:</strong> Many countries require accessibility</li>
+                                        <li><strong>Better SEO:</strong> Search engines favor accessible sites</li>
+                                        <li><strong>Mobile Friendly:</strong> Accessible sites work better on mobile
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="accessibility-principles">
+                                <h4>WCAG Principles (Web Content Accessibility Guidelines)</h4>
+                                <div class="principles-grid">
+                                    <div class="principle-card">
+                                        <h5><i class="fas fa-eye"></i> Perceivable</h5>
+                                        <p>Information must be presentable to users in ways they can perceive</p>
+                                        <ul>
+                                            <li>Alt text for images</li>
+                                            <li>Captions for videos</li>
+                                            <li>Color is not the only way to convey information</li>
+                                        </ul>
+                                    </div>
+                                    <div class="principle-card">
+                                        <h5><i class="fas fa-mouse-pointer"></i> Operable</h5>
+                                        <p>User interface components must be operable</p>
+                                        <ul>
+                                            <li>Keyboard navigation</li>
+                                            <li>Enough time to read content</li>
+                                            <li>No content that causes seizures</li>
+                                        </ul>
+                                    </div>
+                                    <div class="principle-card">
+                                        <h5><i class="fas fa-brain"></i> Understandable</h5>
+                                        <p>Information and operation must be understandable</p>
+                                        <ul>
+                                            <li>Readable and predictable</li>
+                                            <li>Input assistance</li>
+                                            <li>Clear error messages</li>
+                                        </ul>
+                                    </div>
+                                    <div class="principle-card">
+                                        <h5><i class="fas fa-cogs"></i> Robust</h5>
+                                        <p>Content must be robust enough to be interpreted by assistive technologies</p>
+                                        <ul>
+                                            <li>Valid HTML</li>
+                                            <li>Proper ARIA labels</li>
+                                            <li>Compatible with screen readers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-code"></i> Accessibility Implementation</h3>
+                        <div class="module-content">
+                            <div class="accessibility-examples">
+                                <div class="accessibility-card">
+                                    <h4>Semantic HTML</h4>
+                                    <div class="code-example">
+                                        <pre><code>&lt;!-- Good: Semantic structure --&gt;
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Good: Proper headings --&gt;
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;</code></pre>
+                                    </div>
+                                    <div class="accessibility-demo">
+                                        <nav class="semantic-nav-demo">
+                                            <ul>
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">About</a></li>
+                                                <li><a href="#">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                                <div class="accessibility-card">
+                                    <h4>ARIA Labels</h4>
+                                    <div class="code-example">
+                                        <pre><code>&lt;button aria-label="Close menu"&gt;
+    &lt;i class="fas fa-times"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;div role="alert" aria-live="polite"&gt;
+    Form submitted successfully!
+&lt;/div&gt;
+
+&lt;nav aria-label="Main navigation"&gt;
+    &lt;!-- navigation items --&gt;
+&lt;/nav&gt;</code></pre>
+                                    </div>
+                                    <div class="accessibility-demo">
+                                        <button class="aria-demo-btn" aria-label="Close menu">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        <div class="alert-demo" role="alert" aria-live="polite">
+                                            Form submitted successfully!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <h3><i class="fas fa-tools"></i> Accessibility Tools</h3>
+                        <div class="module-content">
+                            <div class="tools-grid">
+                                <div class="tool-card">
+                                    <h4>Testing Tools</h4>
+                                    <ul>
+                                        <li><strong>WAVE:</strong> Web accessibility evaluation tool</li>
+                                        <li><strong>axe DevTools:</strong> Browser extension for testing</li>
+                                        <li><strong>Lighthouse:</strong> Chrome DevTools accessibility audit</li>
+                                        <li><strong>Color Contrast Analyzer:</strong> Check color contrast ratios</li>
+                                    </ul>
+                                </div>
+                                <div class="tool-card">
+                                    <h4>Screen Reader Testing</h4>
+                                    <ul>
+                                        <li><strong>NVDA:</strong> Free screen reader for Windows</li>
+                                        <li><strong>VoiceOver:</strong> Built-in screen reader for Mac</li>
+                                        <li><strong>JAWS:</strong> Popular screen reader for Windows</li>
+                                        <li><strong>TalkBack:</strong> Android screen reader</li>
+                                    </ul>
+                                </div>
+                                <div class="tool-card">
+                                    <h4>Keyboard Navigation</h4>
+                                    <ul>
+                                        <li><strong>Tab:</strong> Navigate through interactive elements</li>
+                                        <li><strong>Enter/Space:</strong> Activate buttons and links</li>
+                                        <li><strong>Arrow Keys:</strong> Navigate menus and lists</li>
+                                        <li><strong>Escape:</strong> Close modals and menus</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="practice" class="section">
+            <div class="container">
+                <h2>Practice Exercises</h2>
+                <p class="section-intro">Test your knowledge with interactive exercises.</p>
+
+                <div class="practice-exercises">
+                    <div class="exercise">
+                        <h3>Exercise 1: Contact Form</h3>
+                        <p>Build a complete contact form with proper validation and accessibility.</p>
+                        <div class="exercise-preview">
+                            <form class="contact-form-demo" onsubmit="return false;">
+                                <div class="form-group">
+                                    <label for="name-input">Full Name *</label>
+                                    <input type="text" id="name-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email-input">Email Address *</label>
+                                    <input type="email" id="email-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject-input">Subject</label>
+                                    <select id="subject-input">
+                                        <option value="">Choose a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="feedback">Feedback</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-input">Message *</label>
+                                    <textarea id="message-input" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Send Message</button>
+                            </form>
+                        </div>
+                        <div class="exercise-tips">
+                            <h4>Tips:</h4>
+                            <ul>
+                                <li>Use semantic HTML elements</li>
+                                <li>Add proper labels and validation</li>
+                                <li>Include ARIA attributes for accessibility</li>
+                                <li>Style with CSS for a professional look</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exercise">
+                        <h3>Exercise 2: Two-Column Layout</h3>
+                        <p>Create a responsive two-column layout that stacks on mobile.</p>
+                        <div class="exercise-preview">
+                            <div class="two-column-demo">
+                                <div class="column-left">
+                                    <h4>Main Content</h4>
+                                    <p>This is the main content area. It should take up more space on desktop and stack
+                                        on mobile.</p>
+                                    <p>Use flexbox or CSS Grid to create this layout.</p>
+                                </div>
+                                <div class="column-right">
+                                    <h4>Sidebar</h4>
+                                    <ul>
+                                        <li>Related links</li>
+                                        <li>Additional info</li>
+                                        <li>Navigation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">
+                            <h4>Tips:</h4>
+                            <ul>
+                                <li>Use CSS Grid or Flexbox</li>
+                                <li>Add media queries for responsive behavior</li>
+                                <li>Consider content hierarchy</li>
+                                <li>Test on different screen sizes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exercise">
+                        <h3>Exercise 3: Portfolio Section</h3>
+                        <p>Design a portfolio section with cards, hover effects, and animations.</p>
+                        <div class="exercise-preview">
+                            <div class="portfolio-demo">
+                                <div class="portfolio-card">
+                                    <div class="card-image">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0wIDBIMjAwVjE1MEgwVjBaIiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjUwIiByPSIzMCIgZmlsbD0iIzM0OThkYiIvPgo8L3N2Zz4K"
+                                            alt="Project 1">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Project One</h4>
+                                        <p>Web Development</p>
+                                        <div class="card-overlay">
+                                            <button class="view-project">View Project</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-card">
+                                    <div class="card-image">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0wIDBIMjAwVjE1MEgwVjBaIiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjUwIiByPSIzMCIgZmlsbD0iIzM0OThkYiIvPgo8L3N2Zz4K"
+                                            alt="Project 2">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Project Two</h4>
+                                        <p>UI/UX Design</p>
+                                        <div class="card-overlay">
+                                            <button class="view-project">View Project</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">
+                            <h4>Tips:</h4>
+                            <ul>
+                                <li>Add hover effects and transitions</li>
+                                <li>Use CSS Grid for card layout</li>
+                                <li>Include overlay effects</li>
+                                <li>Make it responsive</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exercise">
+                        <h3>Exercise 4: Dark Mode Toggle</h3>
+                        <p>Implement a dark mode toggle using CSS variables and JavaScript.</p>
+                        <div class="exercise-preview">
+                            <div class="dark-mode-demo">
+                                <div class="demo-content">
+                                    <h4>Theme Demo</h4>
+                                    <p>This content changes with the theme toggle above.</p>
+                                    <button class="demo-button">Sample Button</button>
+                                </div>
+                                <div class="theme-toggle-demo">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="demoToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Dark Mode</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">
+                            <h4>Tips:</h4>
+                            <ul>
+                                <li>Use CSS variables for colors</li>
+                                <li>Add smooth transitions</li>
+                                <li>Save preference in localStorage</li>
+                                <li>Consider system preferences</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exercise">
+                        <h3>Exercise 5: Project File Structure</h3>
+                        <p>Organize your project with a proper file structure.</p>
+                        <div class="exercise-preview">
+                            <div class="file-structure-demo">
+                                <div class="folder">
+                                    <span class="folder-icon">📁</span>
+                                    <span class="folder-name">my-website</span>
+                                    <div class="folder-contents">
+                                        <div class="file">📄 index.html</div>
+                                        <div class="file">📄 about.html</div>
+                                        <div class="file">📄 contact.html</div>
+                                        <div class="folder">
+                                            <span class="folder-icon">📁</span>
+                                            <span class="folder-name">css</span>
+                                            <div class="folder-contents">
+                                                <div class="file">📄 styles.css</div>
+                                                <div class="file">📄 responsive.css</div>
+                                            </div>
+                                        </div>
+                                        <div class="folder">
+                                            <span class="folder-icon">📁</span>
+                                            <span class="folder-name">js</span>
+                                            <div class="folder-contents">
+                                                <div class="file">📄 script.js</div>
+                                            </div>
+                                        </div>
+                                        <div class="folder">
+                                            <span class="folder-icon">📁</span>
+                                            <span class="folder-name">images</span>
+                                            <div class="folder-contents">
+                                                <div class="file">📄 logo.png</div>
+                                                <div class="file">📄 hero.jpg</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">
+                            <h4>Tips:</h4>
+                            <ul>
+                                <li>Separate concerns (HTML, CSS, JS)</li>
+                                <li>Use descriptive folder names</li>
+                                <li>Keep images organized</li>
+                                <li>Include a README file</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-editor-links">
+                    <h3>Practice in Real-Time</h3>
+                    <p>Use these online editors to practice your HTML and CSS skills:</p>
+                    <div class="editor-links">
+                        <a href="https://codepen.io" target="_blank" class="editor-link">
+                            <i class="fab fa-codepen"></i>
+                            <span>CodePen</span>
+                        </a>
+                        <a href="https://jsfiddle.net" target="_blank" class="editor-link">
+                            <i class="fas fa-fiddle"></i>
+                            <span>JSFiddle</span>
+                        </a>
+                        <a href="https://replit.com" target="_blank" class="editor-link">
+                            <i class="fas fa-code"></i>
+                            <span>Replit</span>
+                        </a>
+                        <a href="https://stackblitz.com" target="_blank" class="editor-link">
+                            <i class="fas fa-bolt"></i>
+                            <span>StackBlitz</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HTML & CSS Learning Hub</h4>
+                    <p>Master the fundamentals of web development with interactive examples and hands-on practice.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#html-basics">HTML Basics</a></li>
+                        <li><a href="#css-basics">CSS Basics</a></li>
+                        <li><a href="#practice">Practice Exercises</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML</a>
+                        </li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS</a></li>
+                        <li><a href="https://codepen.io" target="_blank">CodePen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HTML & CSS Learning Hub. Built with ❤️ for learning.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
