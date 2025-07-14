@@ -1579,9 +1579,13 @@ a:focus {
 }
 
 .footer-section a {
-    color: var(--text-light);
+    color: var(--light-color);
     text-decoration: none;
     transition: var(--transition);
+}
+
+.footer-section p{
+    color: var(--light-color);
 }
 
 .footer-section a:hover {
@@ -1592,6 +1596,10 @@ a:focus {
     border-top: 1px solid var(--border-color);
     padding-top: var(--spacing-md);
     text-align: center;
+}
+
+.footer-bottom p{
+    color: var(--light-color);
 }
 
 /* Semantic HTML Styles */
